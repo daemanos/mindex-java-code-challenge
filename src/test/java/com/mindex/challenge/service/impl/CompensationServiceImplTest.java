@@ -96,7 +96,6 @@ public class CompensationServiceImplTest {
     }
 
     private static void assertCompensationEquivalence(Compensation expected, Compensation actual) {
-        assertEquals(expected.getEmployeeId(), actual.getEmployeeId());
         assertEmployeeEquivalence(expected.getEmployee(), actual.getEmployee());
         assertEquals(expected.getSalary(), actual.getSalary());
         assertEquals(expected.getEffectiveDate(), actual.getEffectiveDate());
