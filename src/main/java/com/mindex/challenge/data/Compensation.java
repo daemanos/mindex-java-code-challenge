@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Compensation {
     private Employee employee;
+    private String employeeId;
     private int salary;
     private Date effectiveDate;
 
@@ -15,11 +16,12 @@ public class Compensation {
     }
 
     public String getEmployeeId() {
-        return employee.getEmployeeId();
+        return employeeId;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+        this.employeeId = employee.getEmployeeId();
     }
 
     public int getSalary() {
