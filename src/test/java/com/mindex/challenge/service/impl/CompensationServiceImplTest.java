@@ -40,7 +40,7 @@ public class CompensationServiceImplTest {
     @Before
     public void setup() {
         employeeUrl = "http://localhost:" + port + "/employee";
-        compensationUrl = "http://localhost:" + port + "/employee/{id}";
+        compensationUrl = "http://localhost:" + port + "/compensation/{id}";
     }
 
     @Test
@@ -71,14 +71,18 @@ public class CompensationServiceImplTest {
                     Compensation.class,
                     createdEmployee.getEmployeeId()).getBody();
 
+        assertNotNull(createdCompensation);
         assertNotNull(createdCompensation.getEmployee());
         assertCompensationEquivalence(testCompensation, createdCompensation);
 
 
         // Read checks
-        /*Employee readEmployee = restTemplate.getForEntity(employeeIdUrl, Employee.class, createdEmployee.getEmployeeId()).getBody();
-        assertEquals(createdEmployee.getEmployeeId(), readEmployee.getEmployeeId());
-        assertEmployeeEquivalence(createdEmployee, readEmployee);*/
+        Compensation readCompensation =
+            restTemplate.getForEntity(
+                    compensationUrl,
+                    Compensation.class,
+                    createdEmployee.getEmployeeId()).getBody();
+        assertCompensationEquivalence(createdCompensation, readCompensation);
 
     }
 
@@ -90,6 +94,7 @@ public class CompensationServiceImplTest {
     }
 
     private static void assertCompensationEquivalence(Compensation expected, Compensation actual) {
+        assertEquals(expected.getEmployeeId(), actual.getEmployeeId());
         assertEmployeeEquivalence(expected.getEmployee(), actual.getEmployee());
         assertEquals(expected.getSalary(), actual.getSalary());
         assertEquals(expected.getEffectiveDate(), actual.getEffectiveDate());
