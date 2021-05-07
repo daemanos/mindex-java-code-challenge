@@ -14,6 +14,10 @@ public class Compensation {
         return employee;
     }
 
+    public String getEmployeeId() {
+        return employee.getEmployeeId();
+    }
+
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
