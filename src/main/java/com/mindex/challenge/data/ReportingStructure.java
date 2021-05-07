@@ -1,7 +1,5 @@
 package com.mindex.challenge.data;
 
-import java.util.list;
-
 public class ReportingStructure {
     private Employee employee;
     private int numberOfReports;
@@ -13,7 +11,7 @@ public class ReportingStructure {
         return employee;
     }
 
-    public Employee setEmployee() {
+    public void setEmployee(Employee employee) {
         this.employee = employee;
         this.numberOfReports = calculateNumberOfReports(employee);
     }

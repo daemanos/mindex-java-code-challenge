@@ -19,7 +19,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
     private EmployeeRepository employeeRepository;
 
     @Override
-    public Employee read(String id) {
+    public ReportingStructure read(String id) {
         LOG.debug("Creating employee with id [{}]", id);
 
         Employee employee = employeeRepository.findByEmployeeId(id);
@@ -33,6 +33,6 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
         ReportingStructure reportingStructure = new ReportingStructure();
         reportingStructure.setEmployee(employee);
 
-        return reportingStructure.getNumberOfReports();
+        return reportingStructure;
     }
 }
