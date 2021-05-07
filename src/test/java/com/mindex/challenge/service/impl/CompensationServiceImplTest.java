@@ -82,6 +82,8 @@ public class CompensationServiceImplTest {
                     compensationUrl,
                     Compensation.class,
                     createdEmployee.getEmployeeId()).getBody();
+        assertNotNull(readCompensation);
+        assertNotNull(readCompensation.getEmployee());
         assertCompensationEquivalence(createdCompensation, readCompensation);
 
     }
