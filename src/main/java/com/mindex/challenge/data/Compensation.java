@@ -2,6 +2,15 @@ package com.mindex.challenge.data;
 
 import java.util.Date;
 
+/**
+ * Employee compensation record
+ *
+ * I assume the system should allow for effective salary dates to be
+ * back-dated, so {@link #setEffectiveDate} allows the date to be set directly.
+ * Another option would be to have {@link #setSalary} do this automatically.
+ *
+ * @author Daman Morris
+ */
 public class Compensation {
     private Employee employee;
     private int salary;

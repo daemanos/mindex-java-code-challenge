@@ -2,6 +2,15 @@ package com.mindex.challenge.data;
 
 import java.util.List;
 
+/**
+ * Reporting structure record
+ *
+ * Allowing clients to set {@link #numberOfReports} directly would introduce
+ * the possibility of a mismatch between the listed employee and their actual
+ * number of reports, so {@link #setEmployee} calculates this automatically.
+ *
+ * @author Daman Morris
+ */
 public class ReportingStructure {
     private Employee employee;
     private int numberOfReports;
