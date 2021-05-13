@@ -78,6 +78,6 @@ public class ReportingStructureServiceImplTest {
                     reportingStructureUrl,
                     ReportingStructure.class,
                     johnLennonEmployeeId).getBody();
-        assertEquals(johnLennonReportingStructure.getNumberOfReports(), 2);
+        assertEquals(johnLennonReportingStructure.getNumberOfReports(), 4);
     }
 }
